@@ -1,0 +1,11 @@
+We type a URL in a browser. Now the request is sent to the server from the client(Browser). The Server gives a response and the HTML response is treated as the web page. What we do is request.get(URL) and we get the response that is later parsed into HTML by BS4. Our assumption is that server where the web page is lying contains the html version of the webpage. This isn't true for all the web pages. Another approach being Web Browser requesting the server that doesn't have the actual HTML version of the webpage, instead having a JS code that uses different methods for processing. Thus the JS code is sent to Web Browser. Web browser being smart uses the techniques to convert JS into HTML web page code.
+In the Previous ReviewScraper Program, we requested the web page and got an HTML response that was parsed using BS4. If we do this in our new scenario, we get JS response from the requests. Lets do it.
+When to know what to do and which approach to apply?
+In MONSTER.com , we look for the vacancies in data scientists.
+We are try to mimick the process of requesting from the server and trying to gather the info of JS as HTML. To do that, we actually need a browser. From python, we open a browser and then give our URL. Chrome has a chromeDriver and firefox has a GeckoDriver.
+So we need to install such drivers. I am using FireFox => GeckoDriver.
+Just run the GeckoDriver in the backGround. We need to open a web Broweser from Python, and this Driver helps in connecting between python script and Browser.
+Then we fetch the URL and get the data in the form of HTML (through selenium and geckoDriver+Browser). We get the tags from which we can get the details.
+We do an image Scraper. The use of the same is to get the image data for later training model purposes. We cannot manually download images.
+
+In the function fetch image urls, we mimic the scrolling of the window from top to down and similarly we click the thumbnail to get the image, we mimic that as well.
